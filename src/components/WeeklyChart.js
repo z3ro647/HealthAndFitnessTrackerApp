@@ -8,7 +8,6 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 const WorkoutChartScreen = () => {
     const [weeklyWorkoutData, setWeeklyWorkoutData] = useState(new Array(7).fill(0));
-    const [weeklyWaterData, setWeeklyWaterData] = useState(new Array(7).fill(0));
     const { user } = useContext(AuthContext); // Get the logged-in user
 
     useEffect(() => {
@@ -32,27 +31,8 @@ const WorkoutChartScreen = () => {
             setWeeklyWorkoutData(weeklyWorkoutSummary);
         });
 
-        // Fetch water intake data
-        const waterQuery = query(
-            collection(db, 'waterIntake'),
-            where('uid', '==', user.uid) // Filter water intake for the logged-in user
-        );
-
-        const unsubscribeWater = onSnapshot(waterQuery, (snapshot) => {
-            const data = snapshot.docs.map((doc) => doc.data());
-            const weeklyWaterSummary = new Array(7).fill(0);
-
-            data.forEach((entry) => {
-                const day = new Date(entry.date).getDay();
-                weeklyWaterSummary[day] += entry.amount;
-            });
-
-            setWeeklyWaterData(weeklyWaterSummary);
-        });
-
         return () => {
             unsubscribeWorkout();
-            unsubscribeWater();
         };
     }, [user]);
 
@@ -91,40 +71,7 @@ const WorkoutChartScreen = () => {
                     style={styles.chart}
                 />
             </LinearGradient>
-
-            {/* Weekly Water Intake Section */}
-            <LinearGradient
-                colors={['#64b5f6', '#1565c0']}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 1, y: 1 }}
-                style={styles.chartContainer}
-            >
-                <Text style={styles.title}>Weekly Water Intake</Text>
-                <BarChart
-                    data={{
-                        labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-                        datasets: [
-                            {
-                                data: weeklyWaterData,
-                            },
-                        ],
-                    }}
-                    width={Dimensions.get('window').width - 32} // Chart width
-                    height={220} // Chart height
-                    yAxisLabel=""
-                    yAxisSuffix=" ml"
-                    chartConfig={{
-                        backgroundColor: '#0091EA',
-                        backgroundGradientFrom: '#4FC3F7',
-                        backgroundGradientTo: '#0288D1',
-                        decimalPlaces: 0, // No decimal places
-                        color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                        labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                        style: { borderRadius: 16 },
-                    }}
-                    style={styles.chart}
-                />
-            </LinearGradient>
+            
         </ScrollView>
     );
 };

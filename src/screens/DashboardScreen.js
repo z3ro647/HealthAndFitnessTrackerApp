@@ -101,8 +101,18 @@ const DashboardScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-    container: { flex: 1, padding: 16, backgroundColor: '#f9f9f9' },
-    title: { fontSize: 26, fontWeight: 'bold', marginBottom: 16, textAlign: 'center', color: '#333' },
+    container: { 
+        flex: 1, 
+        padding: 16, 
+        backgroundColor: '#f9f9f9' 
+    },
+    title: { 
+        fontSize: 26, 
+        fontWeight: 'bold', 
+        marginBottom: 16, 
+        textAlign: 'center', 
+        color: '#333' 
+    },
     card: {
         backgroundColor: '#fff',
         padding: 16,
@@ -114,27 +124,58 @@ const styles = StyleSheet.create({
         shadowRadius: 8,
         elevation: 5,
     },
-    cardTitle: { fontSize: 18, fontWeight: 'bold', marginBottom: 12, color: '#333' },
-    waterTracker: { flexDirection: 'row', alignItems: 'center', marginBottom: 10 },
-    waterText: { fontSize: 20, marginLeft: 10, color: '#007BFF' },
+    cardTitle: { 
+        fontSize: 18, 
+        fontWeight: 'bold', 
+        marginBottom: 12, 
+        color: '#333' 
+    },
+    waterTracker: { 
+        flexDirection: 'row', 
+        alignItems: 'center', 
+        marginBottom: 10 
+    },
+    waterText: { 
+        fontSize: 20, 
+        marginLeft: 10, 
+        color: '#007BFF' 
+    },
     waterButton: {
         backgroundColor: '#007BFF',
         paddingVertical: 12,
         paddingHorizontal: 20,
-        borderRadius: 30,
+        borderRadius: 10,
         marginTop: 10,
         alignItems: 'center',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 8,
+        elevation: 5,
     },
-    waterButtonText: { color: '#fff', fontWeight: 'bold', fontSize: 16 },
+    waterButtonText: { 
+        color: '#fff', 
+        fontWeight: 'bold', 
+        fontSize: 16 
+    },
     addWorkoutButton: {
         backgroundColor: '#28a745',
         paddingVertical: 12,
         paddingHorizontal: 20,
-        borderRadius: 30,
+        borderRadius: 10,
         marginBottom: 20,
         alignItems: 'center',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 8,
+        elevation: 5,
     },
-    addWorkoutButtonText: { color: '#fff', fontWeight: 'bold', fontSize: 16 },
+    addWorkoutButtonText: { 
+        color: '#fff', 
+        fontWeight: 'bold', 
+        fontSize: 16 
+    },
     workoutItem: {
         backgroundColor: '#fff',
         padding: 12,
@@ -145,9 +186,19 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowRadius: 8,
         elevation: 5,
+        marginHorizontal: 16,  // Add horizontal margin to ensure shadow isn't clipped
     },
-    workoutText: { fontSize: 16, color: '#333' },
-    noWorkoutsText: { fontSize: 16, color: '#777', textAlign: 'center', marginTop: 20 },
+    workoutText: { 
+        fontSize: 16, 
+        color: '#333' 
+    },
+    noWorkoutsText: { 
+        fontSize: 16, 
+        color: '#777', 
+        textAlign: 'center', 
+        marginTop: 20 
+    },
 });
+
 
 export default DashboardScreen;

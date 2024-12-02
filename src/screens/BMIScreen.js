@@ -105,7 +105,11 @@ const BMIScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16, backgroundColor: "#f0f8ff" }, // Lighter background
+  container: {
+    flex: 1,
+    padding: 16,
+    backgroundColor: "#f0f8ff", // Lighter background
+  },
   title: {
     fontSize: 28,
     fontWeight: "bold",
@@ -122,9 +126,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     backgroundColor: "#fff",
     shadowColor: "#000", // Shadow effect
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 5,
+    shadowOffset: { width: 0, height: 4 }, // Deeper shadow offset
+    shadowOpacity: 0.2, // Slightly higher opacity
+    shadowRadius: 6, // Larger radius for smoother shadow
+    elevation: 5, // For Android devices
   },
   buttonContainer: {
     flexDirection: "row",
@@ -135,35 +140,61 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#3498db", // Blue button
-    paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingVertical: 12,
+    paddingHorizontal: 25,
     borderRadius: 8,
     width: "48%",
     justifyContent: "center",
+    shadowColor: "#000", // Button shadow
+    shadowOffset: { width: 0, height: 4 }, // Deeper shadow offset
+    shadowOpacity: 0.2, // Slightly higher opacity
+    shadowRadius: 8, // Larger radius for smoother shadow
+    elevation: 5, // For Android devices
   },
   resetButton: {
     backgroundColor: "#e74c3c", // Red button
+    shadowColor: "#000", // Button shadow
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    elevation: 5, // For Android devices
   },
   buttonText: {
     color: "white",
     fontSize: 16,
     marginLeft: 10,
   },
-  resultContainer: { marginTop: 20, alignItems: "center" },
+  resultContainer: {
+    marginTop: 20,
+    alignItems: "center",
+  },
   resultCard: {
     backgroundColor: "#fff",
     padding: 20,
     borderRadius: 10,
     width: "90%",
-    elevation: 5, // Card shadow effect
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
+    elevation: 10, // Larger card shadow
+    shadowColor: "#000", // Card shadow
+    shadowOffset: { width: 0, height: 4 }, // Deeper shadow offset
+    shadowOpacity: 0.2, // Slightly higher opacity
+    shadowRadius: 10, // Larger radius for smoother shadow
   },
-  resultText: { fontSize: 24, fontWeight: "bold", color: "#2c3e50" },
-  categoryText: { fontSize: 20, color: "#555", marginTop: 10 },
-  recommendationText: { fontSize: 16, color: "#777", marginTop: 10 },
+  resultText: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#2c3e50",
+  },
+  categoryText: {
+    fontSize: 20,
+    color: "#555",
+    marginTop: 10,
+  },
+  recommendationText: {
+    fontSize: 16,
+    color: "#777",
+    marginTop: 10,
+  },
 });
+
 
 export default BMIScreen;

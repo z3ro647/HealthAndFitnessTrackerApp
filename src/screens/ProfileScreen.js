@@ -150,13 +150,18 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     button: {
-        backgroundColor: '#6200EE',
+        backgroundColor: '#007BFF',
         paddingVertical: 12,
         paddingHorizontal: 24,
-        borderRadius: 8,
+        borderRadius: 10,
         marginBottom: 12,
         width: '80%',
         alignItems: 'center',
+        shadowColor: '#000', // Shadow color
+        shadowOffset: { width: 0, height: 4 }, // Shadow position
+        shadowOpacity: 0.1, // Shadow opacity
+        shadowRadius: 5, // Shadow blur
+        elevation: 5, // Android shadow
     },
     buttonText: {
         fontSize: 16,
@@ -201,12 +206,22 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         paddingHorizontal: 20,
         borderRadius: 5,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.1,
+        shadowRadius: 5,
+        elevation: 5,
     },
     cancelButton: {
         backgroundColor: 'gray',
         paddingVertical: 10,
         paddingHorizontal: 20,
         borderRadius: 5,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.1,
+        shadowRadius: 5,
+        elevation: 5,
     },
 });
 
